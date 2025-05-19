@@ -1,0 +1,99 @@
+<!-- ScrollReveal & Image Gallery integrated + Dark Theme Toggle + Contact Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMatrix | Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background-color: #eee;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        body.dark {
+            background-color: #111;
+            color: #eee;
+        }
+        body.dark .box, body.dark .page-content {
+            background-color: rgba(0,0,0,0.5);
+            color: #ddd;
+        }
+        body.dark nav ul li a {
+            color: #ccc;
+        }
+        body.dark nav ul li a.active,
+        body.dark nav ul li a:hover {
+            color: #fff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #7e1cff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5d10c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+    <div class="container">
+        <div class="box">
+            <nav>
+                <a href="index.html" class="logo">CyberMatrix</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Rat</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="page-content">
+                <h1 class="sr-fade">Contact Us</h1>
+                <form class="sr-up" action="mailto:ebnosman0@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        ScrollReveal({ reset: true });
+        ScrollReveal().reveal('.sr-fade', { duration: 1000, origin: 'bottom', distance: '20px' });
+        ScrollReveal().reveal('.sr-up', { duration: 1200, origin: 'top', distance: '40px', interval: 200 });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
